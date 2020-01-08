@@ -16,8 +16,8 @@ Express.js를 이용하면 : 몇줄의 코드를 이용해서 서버를 만들 �
 > description : Cloning Youtube<br/>
 > 그외 : 넘어가도 됨<br/>
 > Is this OK? : yes <br/>
-> package.json이 생성됨 -> "script" : ... 은 삭제 
-
+> package.json이 생성됨 -> "script" : ... 은 삭제 <br/>
+> `npm install express`
 <br/>
  /Documents(문서)폴더 하위에 프로젝트 폴더 생성<br/>
  `mkdir wetube` <br/>
@@ -31,6 +31,9 @@ express로 나만의 서버를 만들고 싶다 -> NPMjs설치<br/>
 NPM : Node Package Manager. 패키지 개발자들이 각자의 javascript 패키지를 넣어두면 다운로드, 업데이트 등의 관리를 한번에 할 수 있음. <br/>
 node.js를 설치하면 npm도 같이 설치됨<br/>
 `npm init` : npm이 정한 방식으로 프로젝트 시작 -> 프로젝트 이름을 알려달라고 함 = 내 웹사이트가 package임 <br/>
+_(express 설치)_<br/>
+* 주의사항: npm을 설치할때는 꼭 package.json이 있는 프로젝트 폴더에서 설치해야 함<br/>
+
 
 
 
