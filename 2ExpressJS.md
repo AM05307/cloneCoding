@@ -12,11 +12,11 @@ Express.js를 이용하면 : 몇줄의 코드를 이용해서 서버를 만들 �
 > www.npmjs.com에서 <br/>
 <br/>
 ~/Documents(문서)폴더 하위에 프로젝트 폴더 생성<br/>
-`mkdir wetube` <br/>
-`cd wetube` <br/>
+ `mkdir wetube` <br/>
+ `cd wetube` <br/>
 wetube 폴더 안에 index.js 파일 생성<br/>
 (node 실행방법 : vscode TERMINAL창에 명령어 치면 됨) 
-`node index.js` <br/>
+ `node index.js` <br/>
 <br/>
 <br/>
 express로 나만의 서버를 만들고 싶다 -> NPMjs설치<br/>
