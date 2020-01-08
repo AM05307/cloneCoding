@@ -17,7 +17,7 @@ Express.js를 이용하면 : 몇줄의 코드를 이용해서 서버를 만들 �
 > 그외 : 넘어가도 됨<br/>
 > Is this OK? : yes <br/>
 > package.json이 생성됨 -> "script" : ... 은 삭제 <br/>
-> `npm install express`
+> `npm install express` -> node_modules폴더랑 package-lock.json이 설치됨 
 <br/>
  /Documents(문서)폴더 하위에 프로젝트 폴더 생성<br/>
  `mkdir wetube` <br/>
