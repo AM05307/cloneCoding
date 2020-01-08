@@ -33,6 +33,9 @@ node.js를 설치하면 npm도 같이 설치됨<br/>
 `npm init` : npm이 정한 방식으로 프로젝트 시작 -> 프로젝트 이름을 알려달라고 함 = 내 웹사이트가 package임 <br/>
 _(express 설치)_<br/>
 * 주의사항: npm을 설치할때는 꼭 package.json이 있는 프로젝트 폴더에서 설치해야 함<br/>
+<br/>
+(Tip) npm 프로젝트를 전달할 때 js파일과 package.json만 전달해도됨 (node_modules폴더와 package-lock.json 파일 삭제하고)<br/>
+해당 파일을 전달받아서 `npm install`만 입력하면 package.json에 있는 "dependencies" 항목을 찾아서 알아서 설치함
 
 
 
