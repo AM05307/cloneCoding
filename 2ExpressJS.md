@@ -41,7 +41,9 @@ _(express 설치)_<br/>
 2.3 Your First Express Server <br/>
 .gitignore 생성 : node_modules 추가<br/>
 https://github.com/nodejs/node 에서 node .gitignore 공식파일을 볼 수 있음<br/>
-https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore : node git ignore 내용 
+https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore : node git ignore 내용 <br/>
+gitignore에 package-lock.json도 추가  <br/>
+readme.md파일 생성 <br/>
 
 
 
