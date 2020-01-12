@@ -36,6 +36,11 @@ _(express 설치)_<br/>
 <br/>
 (Tip) npm 프로젝트를 전달할 때 js파일과 package.json만 전달해도됨 (node_modules폴더와 package-lock.json 파일 삭제하고)<br/>
 해당 파일을 전달받아서 `npm install`만 입력하면 package.json에 있는 "dependencies" 항목을 찾아서 알아서 설치함
+<br/>
+<br/>
+2.3 Your First Express Server <br/>
+.gitignore 생성 : node_modules 추가<br/>
+https://github.com/nodejs/node 에서 node .gitignore 공식파일을 볼 수 있음 
 
 
 
