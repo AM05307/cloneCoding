@@ -45,6 +45,15 @@ https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore : node 
 gitignore에 package-lock.json도 추가  <br/>
 readme.md파일 생성 <br/>
 
+http://expressjs.com/en/guide 로 이동<br/>
+index.js 에 routing guide복사 붙여넣기 <br/>
+```const express = require('express')
+const app = express()
+
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', function (req, res) {
+  res.send('hello world')
+})```
 
 
 
