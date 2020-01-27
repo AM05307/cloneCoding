@@ -58,7 +58,7 @@ app.get('/', function (req, res) {
 
 
 package.json에 아래내용 추가 후 TERMINAL에서 바로 npm start로 명령 실행가능
-```"scripts": {
+``` "scripts": {
     "start": "node index.js"
   }
 ``` 
