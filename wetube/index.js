@@ -6,7 +6,7 @@ const express = require('express')
 // app변수 안에 express를 실행해서 담음
 const app = express()
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', function (req, res) {
-  res.send('hello world')
-})
+//localhost 4000port 부여. TERMINAL에서 node index.js 실행후 접속가능 
+// 정상 실행시 : http://localhost:4000/으로 접속했을 때 Cannot GET /이라고 뜸
+// Cannot GET / : 루트(/)에 표시할 게 없음
+app.listen(4000);
