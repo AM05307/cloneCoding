@@ -39,6 +39,10 @@ _(express 설치)_<br/>
 <br/>
 <br/>
 2.3 Your First Express Server <br/>
+> node_modules에서 express를 import한 후,express를 호출하고 실행 -> 이렇게 app을 만듬 <br/>
+> application에 4000번 포트를 listen함 <br/>
+> 그다음 listening하기 시작할 때 handleListening이라는 함수를 호출함 <br/>
+
 .gitignore 생성 : node_modules 추가<br/>
 https://github.com/nodejs/node 에서 node .gitignore 공식파일을 볼 수 있음<br/>
 https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore : node git ignore 내용 <br/>
