@@ -6,10 +6,14 @@ const express = require('express')
 // app변수 안에 express를 실행해서 담음
 const app = express()
 
+function handleListening(){
+  console.log('Listening on : http://localhost:4000');
+}
+
 //localhost 4000port 부여. TERMINAL에서 node index.js 실행후 접속가능 
 // 정상 실행시 : http://localhost:4000/으로 접속했을 때 Cannot GET /이라고 뜸
 // Cannot GET / : 루트(/)에 표시할 게 없음
-app.listen(4000);
+app.listen(4000, handleListening);
 
 // 매번 index.js로 실행하고 싶지 않아서 
 // package.json을 중앙 컨트롤 타워처럼 만듬
