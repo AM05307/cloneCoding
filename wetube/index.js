@@ -10,3 +10,6 @@ const app = express()
 // 정상 실행시 : http://localhost:4000/으로 접속했을 때 Cannot GET /이라고 뜸
 // Cannot GET / : 루트(/)에 표시할 게 없음
 app.listen(4000);
+
+// 매번 index.js로 실행하고 싶지 않아서 
+// package.json을 중앙 컨트롤 타워처럼 만듬
