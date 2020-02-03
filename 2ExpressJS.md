@@ -67,4 +67,13 @@ package.json에 아래내용 추가 후 TERMINAL에서 바로 npm start로 명�
     "start": "node index.js"
   }
 ``` 
+<br/>
+2.5 ES6 on NodeJS using Babel <br/>
+Babeljs.io : 최신의 JS코드를 아주 무난한 예전의 JavaScript 코드로 변환해준다 <br/>
+다양한 방법으로 사용 가능한데 nodeJs에서도 사용가능하다<br/>
+VSC 콘솔에서 `npm install @babel/node`
+
+
+
+
   
