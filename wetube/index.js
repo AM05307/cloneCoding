@@ -12,12 +12,16 @@ function handleListening(){
   console.log(`Listening on : http://localhost:${PORT}`);
 }
 
-function handleHome(){
-  console.log("Hi from home!");
+function handleHome(req, res){
+  console.log(req);
+  res.send("Hello from home");
 }
 
 // 메인 url로 접속시 get 
 app.get("/", handleHome);
+
+// get request에 대한 응답이 있어야 함
+
 
 //localhost 4000port 부여. TERMINAL에서 node index.js 실행후 접속가능 
 // 정상 실행시 : http://localhost:4000/으로 접속했을 때 Cannot GET /이라고 뜸
