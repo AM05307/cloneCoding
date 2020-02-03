@@ -17,8 +17,14 @@ function handleHome(req, res){
   res.send("Hello from home");
 }
 
+function handleProfile(req, res){
+  res.send("You are on my profile");
+}
+
 // 메인 url로 접속시 get 
 app.get("/", handleHome);
+
+app.get("/profile", handleProfile);
 
 // get request에 대한 응답이 있어야 함
 
