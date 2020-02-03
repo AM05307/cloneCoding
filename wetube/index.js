@@ -14,10 +14,7 @@ function handleListening(){
   console.log(`Listening on : http://localhost:${PORT}`);
 }
 
-function handleHome(req, res){
-  console.log(req);
-  res.send("Hello from home");
-}
+const handleHome = (req, res) => res.send("Hello from Home");
 
 const handleProfile = (req, res) => res.send("You are on my profile");
 
