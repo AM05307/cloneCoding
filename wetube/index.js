@@ -4,7 +4,7 @@
 //const express = require('express');
 
 import express from "express";
-import express from "morgan";
+import morgan from "morgan";
 
 // app변수 안에 express를 실행해서 담음
 const app = express();
@@ -18,13 +18,7 @@ const handleHome = (req, res) => res.send("Hello from Home");
 
 const handleProfile = (req, res) => res.send("You are on my profile");
 
-const betweenHome = (req, res, next) => {
-  console.log("Between");
-  next();
-};
-
-// 미들웨어 사용 -전역사용
-app.use(betweenHome);
+app.use(morgan("dev"));
 
 // 메인 url로 접속시 get 
 app.get("/", handleHome);
