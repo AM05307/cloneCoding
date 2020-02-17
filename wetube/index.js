@@ -21,13 +21,15 @@ const betweenHome = (req, res, next) => {
   console.log("Between");
   next();
 };
+
+// 미들웨어 사용
+app.use(betweenHome);
+
 // 메인 url로 접속시 get 
-app.get("/", betweenHome, handleHome);
+app.get("/", handleHome);
 app.get("/profile", handleProfile);
 
 // get request에 대한 응답이 있어야 함
-
-
 //localhost 4000port 부여. TERMINAL에서 node index.js 실행후 접속가능 
 // 정상 실행시 : http://localhost:4000/으로 접속했을 때 Cannot GET /이라고 뜸
 // Cannot GET / : 루트(/)에 표시할 게 없음
