@@ -4,6 +4,7 @@
 //const express = require('express');
 
 import express from "express";
+import express from "morgan";
 
 // app변수 안에 express를 실행해서 담음
 const app = express();
@@ -22,7 +23,7 @@ const betweenHome = (req, res, next) => {
   next();
 };
 
-// 미들웨어 사용
+// 미들웨어 사용 -전역사용
 app.use(betweenHome);
 
 // 메인 url로 접속시 get 
