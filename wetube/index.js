@@ -5,6 +5,7 @@
 
 import express from "express";
 import morgan from "morgan";
+import helmet from "helmet";
 
 // app변수 안에 express를 실행해서 담음
 const app = express();
@@ -18,10 +19,15 @@ const handleHome = (req, res) => res.send("Hello from Home");
 
 const handleProfile = (req, res) => res.send("You are on my profile");
 
+app.use(helmet());
 app.use(morgan("dev"));
 
+const middleware = (req, res, next) => {
+  res.send("not happening");
+};
+
 // 메인 url로 접속시 get 
-app.get("/", handleHome);
+app.get("/", middleware, handleHome);
 app.get("/profile", handleProfile);
 
 // get request에 대한 응답이 있어야 함
