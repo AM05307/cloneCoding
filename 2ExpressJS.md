@@ -113,5 +113,68 @@ ex. 유저의 로그인 여부 체크. 파일 전송시 중간에서 가로채�
 
 브라우저에서 request 시작 > index.js 파일 실행 > application이 route가 존재하는지 살펴봄<br/>
 
+---
+# 2.7 미들웨어 여러개 설치
 
+morgan  : logging에 도움을 줌.  
+
+(morgan npm 검색)
+
+몇가지 로깅 옵션을 선택할 수 있음 
+
+logging : 무슨 일이 어디서 일어났는지를 기록함 
+
+morgan 미들웨어로 접속정보를 console에 표시할 수 있음 
+
+`npm install morgan`
+
+index.js
+
+`import morgan from "morgan";`
+
+ : 닉네임 사용 가능 = `import logger from "morgan";`
+
+helmet : node.js 앱의 보안에 도움이 됨
+
+(helmet npm 검색)
+
+안전하게 만들어주고 보안을 위한 것들을 추가해줌 
+
+`npm install helmet`
+
+cf. yarn : npm의 대체재 
+
+ - 가끔 미들웨어가 연결을 끊을 때가 있음. 
+
+ - 원한다면 middleware로 연결을 끊을 수 있음. (res.send를 실행하는 함수를 발동해서) 
+
+만약 미들웨어가 route전에 respond를 보내면 연결이 일어나지 못해서 연결이 끊김. 
+
+- 누군가 form을 채워서 전송하면 그 정보가 서버에 의해 받아져야 함. 
+
+⇒ form을 받았을때 그 데이터를 가지고 있는 request object에 접근하고 싶음. 
+
+bode parser  : express의 미들웨어. 쿠키를 다루는걸 도와줌
+
+`npm install body-parser`
+
+body로부터 정보를 얻을 수 있게 해줌 
+
+`import bodyParser from "body-parser";`
+
+body parser는 정의해야할 옵션이 있음. 
+
+데이터를 json으로 전송하면 서버가 json을 이해해야 하고, html form을 전송하면 서버가 unencode를 이해해야 함. 
+
+`app.use(bodyParser());` 서버가 유저로부터 받은 쿠키를 이해하는 방법
+
+cookie parser : express의 미들웨어. 쿠키를 다루는걸 도와줌
+
+`npm install cookie-parser`
+
+session을 다루기 위해서 cookie에 유저 정보 저장 
+
+`import cookieParser from "cookie-parser";`
+
+`app.use(cookieParser());`   서버가 유저로부터 받은 쿠키를 이해하는 방법
   
