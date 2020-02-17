@@ -85,6 +85,33 @@ dependency : 내 프로젝트가 실행될 때 필요한 것<br/>
 dependency와는 별개로 프로그래머가 편하려고 설치할때는 npm install 명령 맨 뒤에 -D를 붙이면 됨<br/>
 `npm install nodemon -D`
 
+# 2.6
+
+이슈 : 시작할때마다 서버가 2번 재부팅됨.  서버가 한번 실행되고, 바벨이 코드변경을 감지해서 재실행함<br/>
+
+package.json<br/>
+
+`--delay 2`  추가  : 저장할때마다 2초를 기다려주는데 그러면  babel이 변환을 완료할때까지 기다려줌 <br/>
+
+express 에서의 미들웨어 : 처리가 끝날때까지 연결되어 있음<br/>
+
+express에서의 모든 함수는 middleware가 될 수 있음 <br/>
+
+express의 모든 route와 그런 것들은 connection을 다루는 건 : request, response, next를 가지고 있음.<br/> 
+
+next : 다음 함수를 실행할 수 있는 권한 <br/>
+
+미들웨어는 여러층을 가지고 있음.  양파의 가장 마지막함수가 유저한테 return.<br/>
+
+반활할게 없으면 계속 로딩만 함.<br/>
+
+미들웨어는 원하는 만큼 설정가능<br/> 
+
+ex. 유저의 로그인 여부 체크. 파일 전송시 중간에서 가로채서 다른곳으로 upload 가능.  모든 접속에 대한 로그 작성, ip주소 체크 - 특정 ip 주소 차단 및 접속취소<br/>
+
+우선 어떻게 연결이 시작되는가 : <br/>
+
+브라우저에서 request 시작 > index.js 파일 실행 > application이 route가 존재하는지 살펴봄<br/>
 
 
   
