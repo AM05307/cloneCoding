@@ -72,7 +72,18 @@ package.json에 아래내용 추가 후 TERMINAL에서 바로 npm start로 명�
 Babeljs.io : 최신의 JS코드를 아주 무난한 예전의 JavaScript 코드로 변환해준다 <br/>
 다양한 방법으로 사용 가능한데 nodeJs에서도 사용가능하다<br/>
 VSC 콘솔에서 `npm install @babel/node`
-
+Babel에는 많은 스테이지가 있는데 env: 최신, stage-0: 실험적, stage-3 : 브라우저에서 반만 받아들여짐<br/>
+VSC 콘솔에서 `npm install --save-dev @babel/preset-env`<br/>
+`.babelrc` 파일생성 후 node.js와 JS와 관련된 설정 진행<br/> 
+`npm install @babel/core`<br/> 
+<br/> 
+코드를 바꿨을때 서버를 재부팅하지 않아도 적용되도록 nodemon 설치 <br/>
+VSC 콘솔 : `npm nodemon`<br/>
+<br/>
+package랑 dependency랑 별개로 설치하는 방법<br/>
+dependency : 내 프로젝트가 실행될 때 필요한 것<br/>
+dependency와는 별개로 프로그래머가 편하려고 설치할때는 npm install 명령 맨 뒤에 -D를 붙이면 됨<br/>
+`npm install nodemon -D`
 
 
 
