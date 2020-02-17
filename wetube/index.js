@@ -17,8 +17,9 @@ const handleHome = (req, res) => res.send("Hello from Home");
 
 const handleProfile = (req, res) => res.send("You are on my profile");
 
+const betweenHome = () => console.log("I'm between");
 // 메인 url로 접속시 get 
-app.get("/", handleHome);
+app.get("/", betweenHome, handleHome);
 app.get("/profile", handleProfile);
 
 // get request에 대한 응답이 있어야 함
