@@ -8,7 +8,8 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import {userRouter} from "./router";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
 
 // app변수 안에 express를 실행해서 담음
 const app = express();
@@ -20,6 +21,7 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 app.use("/user", userRouter);
+app.user("/video", videoRouter);
 
 export default app;
 
