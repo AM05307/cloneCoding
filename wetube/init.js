@@ -12,11 +12,6 @@ import bodyParser from "body-parser";
 // app변수 안에 express를 실행해서 담음
 const app = express();
 
-const PORT = 4000;
-
-const handleListening = () => 
-  console.log(`Listening on : http://localhost:${PORT}`);
-
 const handleHome = (req, res) => res.send("Hello from Home");
 
 const handleProfile = (req, res) => res.send("You are on my profile");
