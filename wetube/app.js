@@ -20,8 +20,9 @@ app.use(bodyParser.urlencoded ({ extended : true}));
 app.use(helmet());
 app.use(morgan("dev"));
 
+
 app.use("/user", userRouter);
-app.user("/video", videoRouter);
+app.use("/video", videoRouter);
 
 export default app;
 
