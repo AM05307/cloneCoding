@@ -8,6 +8,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import {userRouter} from "./router";
 
 // app변수 안에 express를 실행해서 담음
 const app = express();
@@ -27,6 +28,7 @@ app.use(morgan("dev"));
 // 메인 url로 접속시 get 
 app.get("/", handleHome);
 app.get("/profile", handleProfile);
+app.get("/user", userRouter);
 
 export default app;
 
