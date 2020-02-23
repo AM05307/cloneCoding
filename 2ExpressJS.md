@@ -178,3 +178,37 @@ session을 다루기 위해서 cookie에 유저 정보 저장
 
 `app.use(cookieParser());`   서버가 유저로부터 받은 쿠키를 이해하는 방법
   
+---
+# 2.12 Recap
+
+- 정리
+
+ init.js에는 app.js에서 import한 application이 있음. application 관련 코드들은 app.js파일에 담겨 있음. 
+
+express를 import했고 express를 실행한 결과를 app 상수로 만듬. 그리고 middleware를 추가함. 
+
+cookieParser는 cookie를 전달받아서 사용할 수 있도록 만들어주는 미들웨어. 
+
+사용자 인증같은 곳에서 쿠키를 검사할 때 사용해야함. 
+
+bodyParser는 사용자가 웹사이트로 전달하는 정보들을 검사하는 미들웨어. request정보에서 form이나 json형태로 된 body를 검사함. 
+
+아바타의 사진이나 비디오를 업로드 할 때 , 제목이나 댓글 같은 정보를 전달할 때 form에 담아서 업로드 해야함. 
+
+helmet 미들웨어는 appllication이 더 안전하도록 만들어줌 
+
+morgan 미들웨어의 역할을 application에서 발생하는 모든 일들을 loggin하는 것
+
+그리고 router 3개를 사용함 
+
+global Router :  /home, /search, /join, /login, /logout URL이 담겨있음 
+
+user Router : /user/ 주소들이 있음. 주 소들은 모두 routers.js에 정의. 한 파일이 바뀌면 모두 적용되도록 할 수 있음 
+
+모든 router의 로지거들은 모두 userController나 videoController에 정의되어 있음 
+
+video Contoller, user Controller : MVC에서 C 부분 
+
+- Pug ; `pug.oug`
+express에서 View를 다루는 방식중의 하나. express로 html을 보여줄 수 있음. HTML을 아주 멋지게 보이도록 만들어줌 
+res.send대신에 실제 HTML을 전달할 것. css로 멋지게 꾸밀 수 있고 이게 MVC에서 V부분.
