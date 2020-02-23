@@ -212,3 +212,21 @@ video Contoller, user Controller : MVC에서 C 부분
 - Pug ; `pug.oug`
 express에서 View를 다루는 방식중의 하나. express로 html을 보여줄 수 있음. HTML을 아주 멋지게 보이도록 만들어줌 
 res.send대신에 실제 HTML을 전달할 것. css로 멋지게 꾸밀 수 있고 이게 MVC에서 V부분.
+
+# 2.13 Installing Pug
+
+- Pug 설치 
+pug = view 엔진 
+`npm install pug`
+- view engine 설정 변경. 기본값) undefined → view engine의 설정값을 pug로 변경 
+app.js 
+`app.set("view engine", "pug");`
+Pug와 express에는 view파일들의 위치에 관한 기본 설정이 있음. 만약 그 설정을 바꾸고 싶다면 'views'설정을 바꾸면 됨. application의 화면이 담긴 디렉토리나 디렉토리의 배열을 입력하면 됨. 
+html 파일을 저장해야 하는 폴더의 기본값은 프로젝트의 작업 디렉토리 + '/views'임
+- views 폴더 생성 > home.pug 생성
+- Pug : 템플릿 언어.
+`p Hello`( = `<p>Hello</p>` )pug가 이 코드를 일반적인 html 코드로 변환함
+- 이 템플릿을 웹사이트에서 보여주려면 어떻게 해야 할까? 
+videoController 에서 res.send 대신 res.render 사용. render함수의 인자로 템플릿 파일의 이름을 입력하면 됨 
+이 함수가 views폴더에서 파일명이 home이고 확장자가 pug인 템플릿 파일을 찾은 후에 보여줄 것. 
+확장자 pug는 우리가 view engine에서 설정했음
