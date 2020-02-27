@@ -240,3 +240,58 @@ videoController 에서 res.send 대신 res.render 사용. render함수의 인자
 home.pug에서 파일의 제일 윗부분에 extension(확장)을 함 `extends layouts/main.pug`= 이 레이아웃을 템플릿에서 확장하겠다는 뜻. 이 코드들도 사용하고 추가도 한다는 뜻
 - 모든 템플릿에 레이아웃을 사용하도록 변경 : 모든 템플릿이  같은 main레이아웃에서 extends 함 
 * 만약 footer가 없는 화면이라면 이 레이아웃을 extends 하면 안됨
+
+---
+# 2.15 Partials with Pug
+
+- partials : 페이지의 일부분
+- `link(rel="stylesheet", href="[https://use.fontawesome.com/releases/v5.5.0/css/all.css](https://use.fontawesome.com/releases/v5.5.0/css/all.css)" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU", crossorigin="anonymous")` 
+fontswesome 아이콘 링크
+- pug에서 text사이에 js를 추가하고 싶을 때 : `#{    }` 사용
+- 우리가 추가한 라우트 들이 pug파일로 연결되면 좋겠음
+
+---
+# 2.16 Local Variables in Pug
+
+- 컨트롤러에 있는 정보를 템플릿에 추가하는 법
+- 헤더가 라우트객체에 접근하도록 설정 : 1 미들웨어 사용
+- locals : 로컬 변수 응답을 포함하는 객체
+- 미들웨어는 next에 req를 전달해야 함. 미들웨어가 커넥션과 라우트들 사이에 있으니까 next()라고 하면 됨
+- To give 'pug' a local variable I have to  "Add it to res.locals"
+
+--- 
+# 2.18 Search Controller
+
+- 검색창 만들기 : `form(name="term" )`
+
+`input(type="text", name="term") : url에 [http://localhost:4000/search?term=](http://localhost:4000/search?term=nico)(검색어)`로 표시됨 
+
+검색창에서 검색한 검색어는 req.query =({ term: 'android' })에 들어있음.  express가 query를 집어넣음. 
+
+[http://localhost:4000/search?term=android&filter=first](http://localhost:4000/search?term=android&filter=first) 로 써서 넘기면 res.query는 { term: 'android', filter: 'first' }가 됨 ⇒ javascript의 객체 형태로 보이고 있음 
+
+`console.log(req.query.term);` 의 결과 : android
+
+- ES6 코딩방식 
+`const { query : { term } } = req;` 
+= req.query.term 
+`{ term : searchingBy }`  =  term의 변수명을 searchingBy로 할당. searchingBy = req.query.term
+- searchingBy를 search템플릿에 전달
+
+    export const search = (req, res) => {
+    	const {
+        query: { term : searchingBy }
+      } = req;
+      res.render("search", { pageTitle: "Search", searchingBy });
+    	// searchingBy : searchingBy 라고 안쓰고 searchingBy라고만 써도 
+      // searchingBy로 입략되는 값이 위에 있는 searchingBy와 같다고 자동으로 인식함 
+    };
+
+    const {
+        query: { term : searchingBy }
+      } = req;
+    는 
+    const searchingBy = req.query.params와 똑같음 
+
+- 컨트롤러도 query에 접근하려면 method가 get이어야 함. get method가 url에 정보를 추가해줌. post method면 저기 주소에 표시되지 않음
+
