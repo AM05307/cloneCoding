@@ -1,8 +1,11 @@
 export const home = (req, res) => 
   res.render("home", { pageTitle: "Home" });
 export const search = (req, res) => {
+  // ES6 이전의 코딩방식 
+  //const searchingBy = req.query.term;
+  
   const {
-    query: { term: searchingBy }
+    query: { term : searchingBy }
   } = req;
   res.render("search", { pageTitle: "Search", searchingBy });
 };
