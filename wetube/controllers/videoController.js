@@ -1,5 +1,7 @@
-export const home = (req, res) => 
-  res.render("home", { pageTitle: "Home" });
+import { videos } from "../db";
+export const home = (req, res) => {
+  res.render("home", { pageTitle: "Home", videos });
+};
 export const search = (req, res) => {
   // ES6 이전의 코딩방식 
   //const searchingBy = req.query.term;

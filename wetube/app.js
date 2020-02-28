@@ -1,9 +1,3 @@
-  
-//require : node module을 어딘가에서 가져옴 = express import 
-// 1순위 : express 폴더를 찾고 
-// 2순위 : node_modules 사이에서 찾음 
-//const express = require('express');
-
 import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
@@ -22,8 +16,7 @@ app.use(helmet());
 app.set("view engine", "pug");
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded ({extended : true}));
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(localsMiddleware);
 
