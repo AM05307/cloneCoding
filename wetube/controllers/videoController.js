@@ -1,9 +1,18 @@
 import routes from "../routes";
+import Video from "../models/Video";
 
-export const home = (req, res) => {
-  res.render("home", { pageTitle: "Home", videos });
+export const home = async (req, res) => {
+  try{
+    const videos = await Video.find({});
+    throw Error("error");
+    res.render("home", { pageTitle: "Home", videos});
+  } catch(error){
+    console.log(error);
+    res.render("home", { pageTitle: "Home", videos: []});
+  }
 };
-export const search = (req, res) => {
+
+export const earch = (req, res) => {
   // ES6 이전의 코딩방식 
   //const searchingBy = req.query.term;
   
