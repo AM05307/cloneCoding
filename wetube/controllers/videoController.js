@@ -28,12 +28,19 @@ export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
 
 // /upload의 요청에 응답 
-export const postUpload = (req, res) => {
+export const postUpload = async(req, res) => {
     const {
-      body: { file, title, description }
+      body: { file, title, description },
+      file : { path }
     } = req;
+    const newVideo = await Video.create({
+      fileUrl : path,
+      title,
+      description
+    });
+    console.dir(file, title, description);
     // To Do: Upload and save video
-    res.redirect(routes.videoDetail(324393));
+    res.redirect(routes.videoDetail(newVideo.id));
 };
 
 export const videoDetail = (req, res) => 
