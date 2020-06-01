@@ -8,6 +8,9 @@ const SEARCH = "/search";
 // Users
 
 const USERS = "/users";
+//controller에서 어떤 data를 가지고 있다는 것을 표현하고 싶다면 
+//더블콜론(:)과 이름을 넣으면 됨 
+//url에서 정보를 가져오는 유일한 방법 
 const USER_DETAIL = "/:id";
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
@@ -45,6 +48,12 @@ const routes = {
       return VIDEO_DETAIL;
     }
   },
-  editVideo: EDIT_VIDEO,
+  editVideo: (id) => {
+    if(id){
+      return `/videos/${id}/edit`
+    } else {
+      return EDIT_VIDEO;
+    }
+  },
   deleteVideo: DELETE_VIDEO
 };
