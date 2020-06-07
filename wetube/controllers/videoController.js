@@ -51,7 +51,7 @@ export const videoDetail = async(req, res) => {
   try{
     const video = await Video.findById(id);
     console.log(video);
-    res.render("videoDetail", { pageTitle: "Video Detail", video });
+    res.render("videoDetail", { pageTitle: video.title, video });
     // video: video 는 video와 같음 
   }catch(error){
     console.log(error);
@@ -77,12 +77,20 @@ export const postEditVideo = async (req, res) => {
     body: {title, description}
   } = req;
   try{
-    await Video.findOneAndUpdate({id}, {title, description});
+    await Video.findOneAndUpdate({_id: id}, {title, description});
     res.redirect(routes.videoDetail(id));
   }catch(error) {
     res.redirect(routes.home);
   }
 };
 
-export const deleteVideo = (req, res) =>
-  res.render("deleteVideo", { pageTitle: "Delete Video" });
+export const deleteVideo = async(req, res) => {
+  const {
+    params: {id}
+  } = req;
+  try{
+    // 해당하는 비디오를 찾아서 지움 
+    await Video.findOneAndRemove({_id : id});
+  }catch(error){}
+  res.redirect(routes.home);
+}
