@@ -35,6 +35,7 @@
     "build:assets": "WEBPACK_ENV=production webpack"
   },
   "devDependencies": {
+    "eslint": "^7.2.0",
     "nodemon": "^2.0.2"
   }
 }
